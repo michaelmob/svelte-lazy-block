@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width,initial-scale=1'>
+
+	<title>Svelte app</title>
+
+	<link rel='icon' type='image/png' href='/favicon.png'>
+	<script src='/component.js'></script>
+</head>
+
+<body>
+	<div id="svelte-component"></div>
+	<script>
+		(function() {
+			const script = document.createElement('script');
+			script.type = 'text/javascript';
+			//script.src = '/wp-content/plugins/svelte-lazy-block/ui/public/component.js';
+			script.src = '/component.js';
+			script.onload = function () {
+				new SvelteComponent({
+					target: document.querySelector("#svelte-component")
+				});
+			};
+			document.head.appendChild(script);
+		})();
+	</script>
+</body>
+
+</html>
